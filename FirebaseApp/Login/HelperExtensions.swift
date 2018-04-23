@@ -1,0 +1,76 @@
+//
+//  HelperExtensions.swift
+//  CloudFunctions
+//
+//  Created by Robert Canton on 2017-09-13.
+//  Copyright © 2017 Robert Canton. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+extension UIButton {
+    
+    private func imageWithColor(color: UIColor) -> UIImage {
+        let rect = CGRect(x: 0.0,y: 0.0,width: 1.0,height: 1.0)
+        UIGraphicsBeginImageContext(rect.size)
+        let context = UIGraphicsGetCurrentContext()
+        
+        context!.setFillColor(color.cgColor)
+        context!.fill(rect)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image!
+    }
+    
+    func setBackgroundColor(color: UIColor, forUIControlState state: UIControlState) {
+        self.setBackgroundImage(imageWithColor(color: color), for: state)
+    }
+    
+}
+
+extension UIColor {
+    convenience init(hex: String) {
+        let scanner = Scanner(string: hex)
+        scanner.scanLocation = 0
+        
+        var rgbValue: UInt64 = 0
+        
+        scanner.scanHexInt64(&rgbValue)
+        
+        let r = (rgbValue & 0xff0000) >> 16
+        let g = (rgbValue & 0xff00) >> 8
+        let b = rgbValue & 0xff
+        
+        self.init(
+            red: CGFloat(r) / 0xff,
+            green: CGFloat(g) / 0xff,
+            blue: CGFloat(b) / 0xff, alpha: 1
+        )
+    }
+}
+
+
+/*extension UIView {
+    
+    /**
+     Adds a vertical gradient layer with two **UIColors** to the **UIView**.
+     - Parameter topColor: The top **UIColor**.
+     - Parameter bottomColor: The bottom **UIColor**.
+     */
+    
+    func addVerticalGradientLayer(topColor:UIColor, bottomColor:UIColor) {
+        let gradient = CAGradientLayer()
+        gradient.frame = self.bounds
+        gradient.colors = [
+            topColor.cgColor,
+            bottomColor.cgColor
+        ]
+        gradient.locations = [0.0, 1.0]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        self.layer.insertSublayer(gradient, at: 0)
+    }
+}*/
