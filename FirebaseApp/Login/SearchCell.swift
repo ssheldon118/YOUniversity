@@ -13,11 +13,27 @@ protocol favoriteDelegate {
     func removeFromFavorite(name: String)
 }
 
+extension UIButton{
+    func flash() {
+        
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.1
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        flash.autoreverses = true
+        //flash.repeatCount = 3
+        
+        layer.add(flash, forKey: nil)
+    }
+}
+
 class SearchCell: UITableViewCell {
 
     @IBOutlet var nameLbl: UILabel!
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var favoriteButton: UIButton!
+    @IBOutlet var unfavoriteButton: UIButton!
     var delegate: favoriteDelegate?
     
     @IBOutlet var actLbl: UILabel!
@@ -26,16 +42,18 @@ class SearchCell: UITableViewCell {
     //let path = index
     
     
-    @IBAction func toggleFavorite(_ sender: Any) {
-        if favoriteButton.titleLabel?.text! == "Add to Favorites"{
-            delegate?.addtoFavorite(name: nameLbl.text!)
-            favoriteButton.setTitle("Remove from Favorites", for: .normal)
-        }else{
-            delegate?.removeFromFavorite(name: nameLbl.text!)
-            favoriteButton.setTitle("Add to Favorites", for: .normal)
-        }
+    
+    
+    @IBAction func makeFavorite(_ sender: Any) {
+        delegate?.addtoFavorite(name: nameLbl.text!)
+        (sender as! UIButton).flash()
+        
     }
     
+    @IBAction func makeUnfavorite(_ sender: Any) {
+        delegate?.removeFromFavorite(name: nameLbl.text!)
+        (sender as! UIButton).flash()
+    }
     
     
     
@@ -45,7 +63,6 @@ class SearchCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         //favoriteButton.titleLabel?.text? = "Add to Favorites"
-        favoriteButton.setTitle("Add to Favorites", for: .normal)
         
     }
 

@@ -24,6 +24,7 @@
 		B0E79003202504FE002DA8AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FFE202504FD002DA8AF /* MenuViewController.swift */; };
 		B0E79004202504FE002DA8AF /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FFF202504FD002DA8AF /* HelperExtensions.swift */; };
 		B0E79005202504FE002DA8AF /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E79000202504FE002DA8AF /* RoundedWhiteButton.swift */; };
+		C22825A620BDF55300A5D4D7 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22825A520BDF55300A5D4D7 /* DetailViewController.swift */; };
 		C290BE5720BC6D3100D8B86E /* supDrafts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE4E20BC6D2F00D8B86E /* supDrafts.swift */; };
 		C290BE5820BC6D3100D8B86E /* recLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE4F20BC6D3000D8B86E /* recLet.swift */; };
 		C290BE5920BC6D3100D8B86E /* collegeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */; };
@@ -59,6 +60,7 @@
 		B0E78FFE202504FD002DA8AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B0E78FFF202504FD002DA8AF /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		B0E79000202504FE002DA8AF /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
+		C22825A520BDF55300A5D4D7 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C290BE4E20BC6D2F00D8B86E /* supDrafts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = supDrafts.swift; path = ../../../../Downloads/CAModel/CAModel/supDrafts.swift; sourceTree = "<group>"; };
 		C290BE4F20BC6D3000D8B86E /* recLet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = recLet.swift; path = ../../../../Downloads/CAModel/CAModel/recLet.swift; sourceTree = "<group>"; };
 		C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = collegeDatabase.swift; path = ../../../../Downloads/CAModel/CAModel/collegeDatabase.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 			children = (
 				C290BE6020BC72F900D8B86E /* SearchViewController.swift */,
 				C2C7D31720BC7AE3008E2580 /* SearchCell.swift */,
+				C22825A520BDF55300A5D4D7 /* DetailViewController.swift */,
 				C290BE5220BC6D3000D8B86E /* collegeData.swift */,
 				C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */,
 				C290BE5420BC6D3000D8B86E /* interview.swift */,
@@ -328,6 +331,7 @@
 			files = (
 				C290BE5B20BC6D3100D8B86E /* collegeData.swift in Sources */,
 				C2C7D31820BC7AE3008E2580 /* SearchCell.swift in Sources */,
+				C22825A620BDF55300A5D4D7 /* DetailViewController.swift in Sources */,
 				B0E78FDB2024FDEF002DA8AF /* ViewController.swift in Sources */,
 				C290BE5F20BC6D3100D8B86E /* scoresStatus.swift in Sources */,
 				B0E79001202504FE002DA8AF /* SignUpViewController.swift in Sources */,
