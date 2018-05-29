@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		621DDA052076A5090022EA3F /* calendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 621DDA042076A5090022EA3F /* calendarViewController.swift */; };
-		621DDA182076DE1C0022EA3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 621DDA092076DE1A0022EA3F /* Assets.xcassets */; };
-		621DDA192076DE1C0022EA3F /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = 621DDA0A2076DE1A0022EA3F /* Base.lproj */; };
 		624716CB20764F100014B33C /* paper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624716CA20764F100014B33C /* paper.swift */; };
 		624716D7207693040014B33C /* sampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624716D6207693040014B33C /* sampleCell.swift */; };
 		62615CBD207567D100151471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62615CBC207567D100151471 /* GoogleService-Info.plist */; };
 		62615CBF2075B51500151471 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62615CBE2075B51500151471 /* Images.xcassets */; };
-		A532550CD0244022A8D278B5 /* Pods_FirebaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F272F2CC379BF3D39E51153 /* Pods_FirebaseApp.framework */; };
 		B0E78FD92024FDEF002DA8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FD82024FDEF002DA8AF /* AppDelegate.swift */; };
 		B0E78FDB2024FDEF002DA8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FDA2024FDEF002DA8AF /* ViewController.swift */; };
 		B0E78FDE2024FDEF002DA8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E78FDC2024FDEF002DA8AF /* Main.storyboard */; };
@@ -27,12 +24,20 @@
 		B0E79003202504FE002DA8AF /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FFE202504FD002DA8AF /* MenuViewController.swift */; };
 		B0E79004202504FE002DA8AF /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FFF202504FD002DA8AF /* HelperExtensions.swift */; };
 		B0E79005202504FE002DA8AF /* RoundedWhiteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E79000202504FE002DA8AF /* RoundedWhiteButton.swift */; };
+		C290BE5720BC6D3100D8B86E /* supDrafts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE4E20BC6D2F00D8B86E /* supDrafts.swift */; };
+		C290BE5820BC6D3100D8B86E /* recLet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE4F20BC6D3000D8B86E /* recLet.swift */; };
+		C290BE5920BC6D3100D8B86E /* collegeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */; };
+		C290BE5A20BC6D3100D8B86E /* status.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5120BC6D3000D8B86E /* status.swift */; };
+		C290BE5B20BC6D3100D8B86E /* collegeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5220BC6D3000D8B86E /* collegeData.swift */; };
+		C290BE5D20BC6D3100D8B86E /* interview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5420BC6D3000D8B86E /* interview.swift */; };
+		C290BE5E20BC6D3100D8B86E /* profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5520BC6D3000D8B86E /* profile.swift */; };
+		C290BE5F20BC6D3100D8B86E /* scoresStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE5620BC6D3000D8B86E /* scoresStatus.swift */; };
+		C290BE6120BC72F900D8B86E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290BE6020BC72F900D8B86E /* SearchViewController.swift */; };
+		C2C7D31820BC7AE3008E2580 /* SearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C7D31720BC7AE3008E2580 /* SearchCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		621DDA042076A5090022EA3F /* calendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = calendarViewController.swift; sourceTree = "<group>"; };
-		621DDA092076DE1A0022EA3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../../Downloads/appstore-clone-master/AppStoreClone/Assets.xcassets"; sourceTree = "<group>"; };
-		621DDA0A2076DE1A0022EA3F /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = "../../../Downloads/appstore-clone-master/AppStoreClone/Base.lproj"; sourceTree = "<group>"; };
 		621DDA292076DE9F0022EA3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		621DDA2B2076DE9F0022EA3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Main.storyboard; sourceTree = "<group>"; };
 		624716CA20764F100014B33C /* paper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paper.swift; sourceTree = "<group>"; };
@@ -40,7 +45,6 @@
 		62615CBC207567D100151471 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62615CBE2075B51500151471 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6580728F4CE95C2C81CE978D /* Pods-FirebaseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseApp/Pods-FirebaseApp.debug.xcconfig"; sourceTree = "<group>"; };
-		8F272F2CC379BF3D39E51153 /* Pods_FirebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E78FD52024FDEF002DA8AF /* FirebaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E78FD82024FDEF002DA8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0E78FDA2024FDEF002DA8AF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +59,16 @@
 		B0E78FFE202504FD002DA8AF /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B0E78FFF202504FD002DA8AF /* HelperExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
 		B0E79000202504FE002DA8AF /* RoundedWhiteButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedWhiteButton.swift; sourceTree = "<group>"; };
+		C290BE4E20BC6D2F00D8B86E /* supDrafts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = supDrafts.swift; path = ../../../../Downloads/CAModel/CAModel/supDrafts.swift; sourceTree = "<group>"; };
+		C290BE4F20BC6D3000D8B86E /* recLet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = recLet.swift; path = ../../../../Downloads/CAModel/CAModel/recLet.swift; sourceTree = "<group>"; };
+		C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = collegeDatabase.swift; path = ../../../../Downloads/CAModel/CAModel/collegeDatabase.swift; sourceTree = "<group>"; };
+		C290BE5120BC6D3000D8B86E /* status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = status.swift; path = ../../../../Downloads/CAModel/CAModel/status.swift; sourceTree = "<group>"; };
+		C290BE5220BC6D3000D8B86E /* collegeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = collegeData.swift; path = ../../../../Downloads/CAModel/CAModel/collegeData.swift; sourceTree = "<group>"; };
+		C290BE5420BC6D3000D8B86E /* interview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = interview.swift; path = ../../../../Downloads/CAModel/CAModel/interview.swift; sourceTree = "<group>"; };
+		C290BE5520BC6D3000D8B86E /* profile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = profile.swift; path = ../../../../Downloads/CAModel/CAModel/profile.swift; sourceTree = "<group>"; };
+		C290BE5620BC6D3000D8B86E /* scoresStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = scoresStatus.swift; path = ../../../../Downloads/CAModel/CAModel/scoresStatus.swift; sourceTree = "<group>"; };
+		C290BE6020BC72F900D8B86E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		C2C7D31720BC7AE3008E2580 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
 		F518532BBBD9EEF6AAD40CDD /* Pods-FirebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseApp/Pods-FirebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,7 +77,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A532550CD0244022A8D278B5 /* Pods_FirebaseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,7 +86,6 @@
 		181A7215BDC45820EBC9F544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				8F272F2CC379BF3D39E51153 /* Pods_FirebaseApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -81,6 +93,16 @@
 		621DDA242076DE4B0022EA3F /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				C290BE6020BC72F900D8B86E /* SearchViewController.swift */,
+				C2C7D31720BC7AE3008E2580 /* SearchCell.swift */,
+				C290BE5220BC6D3000D8B86E /* collegeData.swift */,
+				C290BE5020BC6D3000D8B86E /* collegeDatabase.swift */,
+				C290BE5420BC6D3000D8B86E /* interview.swift */,
+				C290BE5520BC6D3000D8B86E /* profile.swift */,
+				C290BE4F20BC6D3000D8B86E /* recLet.swift */,
+				C290BE5620BC6D3000D8B86E /* scoresStatus.swift */,
+				C290BE5120BC6D3000D8B86E /* status.swift */,
+				C290BE4E20BC6D2F00D8B86E /* supDrafts.swift */,
 				B0E78FDA2024FDEF002DA8AF /* ViewController.swift */,
 				624716CA20764F100014B33C /* paper.swift */,
 				B0E78FFE202504FD002DA8AF /* MenuViewController.swift */,
@@ -100,7 +122,6 @@
 				62615CBC207567D100151471 /* GoogleService-Info.plist */,
 				B0E78FE12024FDEF002DA8AF /* LaunchScreen.storyboard */,
 				62615CBE2075B51500151471 /* Images.xcassets */,
-				621DDA092076DE1A0022EA3F /* Assets.xcassets */,
 				B0E78FDF2024FDEF002DA8AF /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -160,7 +181,6 @@
 				621DDA252076DE870022EA3F /* Assets */,
 				621DDA272076DE9F0022EA3F /* Base.lproj */,
 				621DDA242076DE4B0022EA3F /* Login */,
-				621DDA0A2076DE1A0022EA3F /* Base.lproj */,
 				B0E78FD82024FDEF002DA8AF /* AppDelegate.swift */,
 				B0E78FDC2024FDEF002DA8AF /* Main.storyboard */,
 			);
@@ -231,9 +251,7 @@
 			files = (
 				B0E78FE32024FDEF002DA8AF /* LaunchScreen.storyboard in Resources */,
 				62615CBF2075B51500151471 /* Images.xcassets in Resources */,
-				621DDA192076DE1C0022EA3F /* Base.lproj in Resources */,
 				62615CBD207567D100151471 /* GoogleService-Info.plist in Resources */,
-				621DDA182076DE1C0022EA3F /* Assets.xcassets in Resources */,
 				B0E78FE02024FDEF002DA8AF /* Assets.xcassets in Resources */,
 				B0E78FDE2024FDEF002DA8AF /* Main.storyboard in Resources */,
 			);
@@ -308,16 +326,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C290BE5B20BC6D3100D8B86E /* collegeData.swift in Sources */,
+				C2C7D31820BC7AE3008E2580 /* SearchCell.swift in Sources */,
 				B0E78FDB2024FDEF002DA8AF /* ViewController.swift in Sources */,
+				C290BE5F20BC6D3100D8B86E /* scoresStatus.swift in Sources */,
 				B0E79001202504FE002DA8AF /* SignUpViewController.swift in Sources */,
+				C290BE5D20BC6D3100D8B86E /* interview.swift in Sources */,
 				B0E78FFB202504E1002DA8AF /* InitialViewController.swift in Sources */,
 				B0E79004202504FE002DA8AF /* HelperExtensions.swift in Sources */,
+				C290BE5820BC6D3100D8B86E /* recLet.swift in Sources */,
+				C290BE5920BC6D3100D8B86E /* collegeDatabase.swift in Sources */,
 				621DDA052076A5090022EA3F /* calendarViewController.swift in Sources */,
 				B0E78FF92025025E002DA8AF /* HomeViewController.swift in Sources */,
 				624716D7207693040014B33C /* sampleCell.swift in Sources */,
 				B0E79003202504FE002DA8AF /* MenuViewController.swift in Sources */,
+				C290BE5E20BC6D3100D8B86E /* profile.swift in Sources */,
 				624716CB20764F100014B33C /* paper.swift in Sources */,
+				C290BE6120BC72F900D8B86E /* SearchViewController.swift in Sources */,
+				C290BE5A20BC6D3100D8B86E /* status.swift in Sources */,
 				B0E78FD92024FDEF002DA8AF /* AppDelegate.swift in Sources */,
+				C290BE5720BC6D3100D8B86E /* supDrafts.swift in Sources */,
 				B0E79002202504FE002DA8AF /* LoginViewController.swift in Sources */,
 				B0E79005202504FE002DA8AF /* RoundedWhiteButton.swift in Sources */,
 			);
@@ -474,7 +502,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAN2JV67RU;
+				DEVELOPMENT_TEAM = 92NCWL37U8;
 				INFOPLIST_FILE = FirebaseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenSheldon.yoUniversity;
@@ -490,7 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = HAN2JV67RU;
+				DEVELOPMENT_TEAM = 92NCWL37U8;
 				INFOPLIST_FILE = FirebaseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenSheldon.yoUniversity;

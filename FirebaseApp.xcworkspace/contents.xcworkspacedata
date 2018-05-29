@@ -2,9 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:../../Downloads/appstore-clone-master-2/AppStoreClone.xcodeproj">
-   </FileRef>
-   <FileRef
       location = "group:FirebaseApp.xcodeproj">
    </FileRef>
    <FileRef
