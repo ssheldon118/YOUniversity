@@ -129,6 +129,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         DVC.getSatLbl = "\(String(currentDataArray[indexPath.row].satLow))-\(String(currentDataArray[indexPath.row].satHigh))"
         //cell.imgView.image = UIImage(named: currentDataArray[indexPath.row].name)
         DVC.getCollImg = UIImage(named: currentDataArray[indexPath.row].name)!
+        DVC.getCityLbl = "\(currentDataArray[indexPath.row].city),"
+        DVC.getStateLbl = currentDataArray[indexPath.row].state
+        DVC.getTuitionLbl = "$ \(String(currentDataArray[indexPath.row].tuition))"
+        DVC.getPopulationLbl = String(currentDataArray[indexPath.row].studentPop)
         
         self.navigationController?.pushViewController(DVC, animated: true)
         
