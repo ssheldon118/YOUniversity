@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import EventKit
 import Firebase
 
 class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, favoriteDelegate{
@@ -93,15 +94,54 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         table.reloadData()
     }
     
+    
+    let dateFormatter = DateFormatter()
+    //dateFormatter.locale = Locale(identifier: "en_US_POSIX")
+   // dateFormatter.dateFormat = "yyyy-MM-dd"
+   // dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+    
     //Favorite Button
     func addtoFavorite(name: String) {
         for x in 0..<dataArray.count{
             if name == dataArray[x].name{
                 dataArray[x].fav = .yes
+               
+                let eventstore:EKEventStore = EKEventStore()
+                eventstore.requestAccess(to: .event) { (granted, error) in
+                    if (granted) && (error == nil){
+                        print("granted \(granted)")
+                        print("error \(error)")
+                        
+                        let event:EKEvent = EKEvent(eventStore: eventstore)
+                      
+                        event.title = "\(self.dataArray[x].name) Regular Decision Deadline"
+                        event.startDate = self.dataArray[x].regularDecision as Date!
+                        event.endDate = event.startDate
+                        event.notes = "Good luck!"
+                        event.calendar = eventstore.defaultCalendarForNewEvents
+                        do{
+                            try eventstore.save(event, span: .thisEvent)
+                        }catch let error as NSError{
+                            print("\(error)")
+                        }
+                        print("save event")
+                        
+                    }else{
+                        print(error)
+                    }
+                    let alertController = UIAlertController(title: "Favorited", message:
+                        "Pertinent dates added to calender!", preferredStyle: UIAlertControllerStyle.alert)
+                    alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                
                 return
             }
         }
         //table.reloadData()
+        //add event
+    
         return
     }
     
@@ -115,6 +155,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         }
         table.reloadData()
+        //remove event
         return
     }
     

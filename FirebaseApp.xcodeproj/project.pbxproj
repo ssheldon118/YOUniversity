@@ -12,6 +12,8 @@
 		624716D7207693040014B33C /* sampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624716D6207693040014B33C /* sampleCell.swift */; };
 		62615CBD207567D100151471 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62615CBC207567D100151471 /* GoogleService-Info.plist */; };
 		62615CBF2075B51500151471 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62615CBE2075B51500151471 /* Images.xcassets */; };
+		62C42B7820BE9D460057F6F9 /* infoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C42B7720BE9D460057F6F9 /* infoView.swift */; };
+		72E74635506D93D94C018EE5 /* Pods_FirebaseApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D791E73DF7788DDDBBE3CF77 /* Pods_FirebaseApp.framework */; };
 		B0E78FD92024FDEF002DA8AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FD82024FDEF002DA8AF /* AppDelegate.swift */; };
 		B0E78FDB2024FDEF002DA8AF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E78FDA2024FDEF002DA8AF /* ViewController.swift */; };
 		B0E78FDE2024FDEF002DA8AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0E78FDC2024FDEF002DA8AF /* Main.storyboard */; };
@@ -45,6 +47,7 @@
 		624716D6207693040014B33C /* sampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleCell.swift; sourceTree = "<group>"; };
 		62615CBC207567D100151471 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62615CBE2075B51500151471 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		62C42B7720BE9D460057F6F9 /* infoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoView.swift; sourceTree = "<group>"; };
 		6580728F4CE95C2C81CE978D /* Pods-FirebaseApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseApp/Pods-FirebaseApp.debug.xcconfig"; sourceTree = "<group>"; };
 		B0E78FD52024FDEF002DA8AF /* FirebaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirebaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0E78FD82024FDEF002DA8AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		C29E4BE520BE53A900B8B1BA /* supDrafts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = supDrafts.swift; sourceTree = "<group>"; };
 		C29E4BE720BE53E600B8B1BA /* scoresStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = scoresStatus.swift; sourceTree = "<group>"; };
 		C2C7D31720BC7AE3008E2580 /* SearchCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCell.swift; sourceTree = "<group>"; };
+		D791E73DF7788DDDBBE3CF77 /* Pods_FirebaseApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FirebaseApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F518532BBBD9EEF6AAD40CDD /* Pods-FirebaseApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FirebaseApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-FirebaseApp/Pods-FirebaseApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -79,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72E74635506D93D94C018EE5 /* Pods_FirebaseApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +93,7 @@
 		181A7215BDC45820EBC9F544 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D791E73DF7788DDDBBE3CF77 /* Pods_FirebaseApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +118,7 @@
 				B0E78FFA202504E1002DA8AF /* InitialViewController.swift */,
 				B0E78FFF202504FD002DA8AF /* HelperExtensions.swift */,
 				B0E78FFD202504FD002DA8AF /* LoginViewController.swift */,
+				62C42B7720BE9D460057F6F9 /* infoView.swift */,
 				B0E79000202504FE002DA8AF /* RoundedWhiteButton.swift */,
 				B0E78FFC202504FD002DA8AF /* SignUpViewController.swift */,
 				B0E78FF82025025E002DA8AF /* HomeViewController.swift */,
@@ -329,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C42B7820BE9D460057F6F9 /* infoView.swift in Sources */,
 				C29E4BE820BE53E600B8B1BA /* scoresStatus.swift in Sources */,
 				C2C7D31820BC7AE3008E2580 /* SearchCell.swift in Sources */,
 				C22825A620BDF55300A5D4D7 /* DetailViewController.swift in Sources */,
@@ -506,7 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92NCWL37U8;
+				DEVELOPMENT_TEAM = HAN2JV67RU;
 				INFOPLIST_FILE = FirebaseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenSheldon.yoUniversity;
@@ -522,7 +530,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 92NCWL37U8;
+				DEVELOPMENT_TEAM = HAN2JV67RU;
 				INFOPLIST_FILE = FirebaseApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.stephenSheldon.yoUniversity;
