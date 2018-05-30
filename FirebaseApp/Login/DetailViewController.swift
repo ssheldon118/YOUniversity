@@ -11,6 +11,7 @@ import UIKit
 
 class DetailViewController: UIViewController{
     
+    @IBOutlet var supsLbl: UILabel!
     @IBOutlet var populationLbl: UILabel!
     @IBOutlet var tuitionLbl: UILabel!
     @IBOutlet var stateLbl: UILabel!
@@ -29,6 +30,7 @@ class DetailViewController: UIViewController{
     var getTuitionLbl = String()
     var getStateLbl = String()
     var getCityLbl = String()
+    var getSupsLbl = Array<supDrafts>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +44,7 @@ class DetailViewController: UIViewController{
         tuitionLbl.text! = getTuitionLbl
         stateLbl.text! = getStateLbl
         cityLbl.text! = getCityLbl
+        supsLbl.text! = getSupsLbl[0].prompt
         //collImg.frame.height = 150
     }
     

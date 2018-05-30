@@ -133,6 +133,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         DVC.getStateLbl = currentDataArray[indexPath.row].state
         DVC.getTuitionLbl = "$ \(String(currentDataArray[indexPath.row].tuition))"
         DVC.getPopulationLbl = String(currentDataArray[indexPath.row].studentPop)
+        DVC.getSupsLbl = currentDataArray[indexPath.row].sups
         
         self.navigationController?.pushViewController(DVC, animated: true)
         

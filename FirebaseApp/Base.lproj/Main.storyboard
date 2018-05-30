@@ -648,11 +648,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xar-Mc-kk1">
+                                <rect key="frame" x="16" y="346" width="343" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="343" id="o1y-wW-VKq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="G1B-w4-DV6" firstAttribute="leading" secondItem="50a-Nn-UPj" secondAttribute="trailing" constant="21" id="1Zh-aZ-MLH"/>
                             <constraint firstItem="kDJ-RD-rJD" firstAttribute="top" secondItem="50a-Nn-UPj" secondAttribute="bottom" constant="20" id="2l1-7v-ddW"/>
+                            <constraint firstItem="xar-Mc-kk1" firstAttribute="top" secondItem="gKT-H3-TtF" secondAttribute="bottom" constant="8" id="2z2-GB-NaV"/>
                             <constraint firstItem="Dua-lr-EnE" firstAttribute="leading" secondItem="3Ar-8A-9MI" secondAttribute="trailing" constant="10" id="5uO-eb-JPX"/>
                             <constraint firstItem="BHX-Vt-Liy" firstAttribute="top" secondItem="duu-Yy-Lft" secondAttribute="bottom" constant="8" id="7Fn-AI-obK"/>
                             <constraint firstItem="Jtx-aw-a15" firstAttribute="top" secondItem="JWN-8j-Kwc" secondAttribute="bottom" constant="8" id="97s-RM-DAy"/>
@@ -686,11 +696,13 @@
                             <constraint firstItem="Jtx-aw-a15" firstAttribute="leading" secondItem="q9C-H5-HuX" secondAttribute="trailing" constant="10" id="ef6-LH-MHj"/>
                             <constraint firstItem="JWN-8j-Kwc" firstAttribute="top" secondItem="EYb-Vm-Pag" secondAttribute="top" constant="33" id="hyp-Zq-Xeb"/>
                             <constraint firstItem="kDJ-RD-rJD" firstAttribute="leading" secondItem="EYb-Vm-Pag" secondAttribute="leading" constant="16" id="i39-KR-Hbo"/>
+                            <constraint firstItem="EYb-Vm-Pag" firstAttribute="trailing" secondItem="xar-Mc-kk1" secondAttribute="trailing" constant="16" id="iMG-Ja-O2X"/>
                             <constraint firstItem="qfw-qL-yOW" firstAttribute="top" secondItem="Dua-lr-EnE" secondAttribute="bottom" constant="8" id="jZG-2L-DNI"/>
                             <constraint firstItem="zbn-S1-oyp" firstAttribute="top" secondItem="q9C-H5-HuX" secondAttribute="bottom" constant="8" id="oVn-pW-MTc"/>
                             <constraint firstItem="3Ar-8A-9MI" firstAttribute="top" secondItem="kDJ-RD-rJD" secondAttribute="bottom" constant="8" id="rmT-X6-ZWE"/>
                             <constraint firstItem="gKT-H3-TtF" firstAttribute="leading" secondItem="EYb-Vm-Pag" secondAttribute="leading" constant="16" id="sy5-i9-t6D"/>
                             <constraint firstItem="I04-vN-WkZ" firstAttribute="top" secondItem="50a-Nn-UPj" secondAttribute="bottom" constant="20" id="ueS-jd-8e7"/>
+                            <constraint firstItem="xar-Mc-kk1" firstAttribute="leading" secondItem="EYb-Vm-Pag" secondAttribute="leading" constant="16" id="wfL-7B-C8P"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="EYb-Vm-Pag"/>
                     </view>
@@ -703,6 +715,7 @@
                         <outlet property="populationLbl" destination="qfw-qL-yOW" id="61x-0e-t1I"/>
                         <outlet property="satLbl" destination="duu-Yy-Lft" id="vrl-iX-fJR"/>
                         <outlet property="stateLbl" destination="I04-vN-WkZ" id="eRu-ZN-Dp9"/>
+                        <outlet property="supsLbl" destination="xar-Mc-kk1" id="fzL-f3-gIn"/>
                         <outlet property="tuitionLbl" destination="Dua-lr-EnE" id="DNV-kU-vkW"/>
                     </connections>
                 </viewController>
