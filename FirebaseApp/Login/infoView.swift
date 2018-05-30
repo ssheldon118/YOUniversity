@@ -5,7 +5,7 @@
 //  Created by Robert Canton on 2017-09-13.
 //  Copyright © 2017 Robert Canton. All rights reserved.
 //
-/*
+
 import Foundation
 import UIKit
 import Firebase
@@ -28,7 +28,7 @@ class InfoViewController:UIViewController, UITextFieldDelegate {
         continueButton = RoundedWhiteButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
         continueButton.setTitleColor(UIColor(hex: "FFFFFF"), for: .normal)
         // continueButton.setTitleF
-        continueButton.setTitle("Log In", for: .normal)
+        continueButton.setTitle("Continue", for: .normal)
         continueButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 22)
         continueButton.center = CGPoint(x: view.center.x, y: view.frame.height - continueButton.frame.height - 24)
         // continueButton.highlightedColor = UIColor(white: 1.0, alpha: 1.0)
@@ -36,7 +36,7 @@ class InfoViewController:UIViewController, UITextFieldDelegate {
         continueButton.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
         continueButton.alpha = 0.5
         view.addSubview(continueButton)
-        setContinueButton(enabled: false)
+        setContinueButton(enabled: true)
         
         activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityView.color = secondaryColor
@@ -48,24 +48,22 @@ class InfoViewController:UIViewController, UITextFieldDelegate {
         satField.delegate = self
         actField.delegate = self
         recField.delegate = self
-       // essayField.delegate = self
         
-        satField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        passwordField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        emailField.becomeFirstResponder()
+        satField.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillAppear), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        emailField.resignFirstResponder()
-        passwordField.resignFirstResponder()
+        satField.resignFirstResponder()
+        actField.resignFirstResponder()
+        recField.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -100,26 +98,21 @@ class InfoViewController:UIViewController, UITextFieldDelegate {
      - Parameter target: The targeted **UITextField**.
      */
     
-    @objc func textFieldChanged(_ target:UITextField) {
-        let email = emailField.text
-        let password = passwordField.text
-        let formFilled = email != nil && email != "" && password != nil && password != ""
-        setContinueButton(enabled: formFilled)
-    }
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         // Resigns the target textField and assigns the next textField in the form.
         
         switch textField {
-        case emailField:
-            emailField.resignFirstResponder()
-            passwordField.becomeFirstResponder()
+        case satField:
+            satField.resignFirstResponder()
+            actField.becomeFirstResponder()
             break
-        case passwordField:
-            handleSignIn()
+        case actField:
+            actField.resignFirstResponder()
+            recField.becomeFirstResponder()
+            break
+        case recField:
+            recField.resignFirstResponder()
             break
         default:
             break
@@ -142,28 +135,24 @@ class InfoViewController:UIViewController, UITextFieldDelegate {
     }
     
     @objc func handleSignIn() {
-        guard let email = emailField.text else { return }
-        guard let pass = passwordField.text else { return }
+        guard let satScore = satField.text else { return }
+        guard let actScore = actField.text else { return }
+        guard let recNumber = recField.text else { return }
+        guard let essayCompleted = Optional(essayField.isOn) else {return}
         
         setContinueButton(enabled: false)
         continueButton.setTitle("", for: .normal)
         activityView.startAnimating()
+        let defaults = UserDefaults.standard
         
-        Auth.auth().signIn(withEmail: email, password: pass) { user, error in
-            if error == nil && user != nil {
-                self.dismiss(animated: false, completion: nil)
-            } else {
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
-                print("Error logging in: \(error!.localizedDescription)")
-            }
-            self.setContinueButton(enabled: true)
-            self.continueButton.setTitle("Log In", for: .normal)
-            self.activityView.stopAnimating()
-        }
+        defaults.set(satScore, forKey: "satScore")
+        defaults.set(actScore, forKey: "actScore")
+        defaults.set(recNumber, forKey: "recNumber")
+        defaults.set(essayCompleted, forKey: "essayCompleted")
+        
+        self.performSegue(withIdentifier: "toHome", sender: self)
+        //SignUpViewController.dismiss(animated: true, completion: nil)
     }
 }
 
-*/
+

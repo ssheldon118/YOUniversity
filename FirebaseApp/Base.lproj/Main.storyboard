@@ -173,8 +173,7 @@
                         <outlet property="loginButton" destination="4Be-In-lkf" id="FSL-CL-glV"/>
                         <outlet property="onboardingView" destination="vlb-NL-eKB" id="8XR-46-Fxi"/>
                         <outlet property="signupButton" destination="PuY-IM-1L6" id="kSm-8Q-njw"/>
-                        <segue destination="5HU-yl-1JL" kind="show" id="mEX-tq-ph5"/>
-                        <segue destination="5HU-yl-1JL" kind="show" identifier="toHomeScreen" id="ZED-UK-Fyi"/>
+                        <segue destination="cfs-ul-RDs" kind="show" identifier="toHomeScreen" id="Teq-1x-x4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a1h-C8-O8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -268,24 +267,25 @@
                         <outlet property="dismissButton" destination="uW6-oV-FlT" id="hqc-G4-3WG"/>
                         <outlet property="emailField" destination="lyG-5S-gjK" id="QwQ-3X-aL2"/>
                         <outlet property="passwordField" destination="NWG-bg-bvL" id="Rwy-Jo-kcW"/>
+                        <segue destination="5HU-yl-1JL" kind="show" identifier="toInfoScreen" id="Gp4-U7-Y1m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TaG-Xx-sJp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3271" y="871"/>
+            <point key="canvasLocation" x="3204" y="1268"/>
         </scene>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="3v1-oj-5Cs">
             <objects>
-                <viewController id="5HU-yl-1JL" sceneMemberID="viewController">
+                <viewController id="5HU-yl-1JL" customClass="InfoViewController" customModule="FirebaseApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zop-Qf-ZTg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-re-eSS">
-                                <rect key="frame" x="16" y="168" width="343" height="139"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="ooP-re-eSS">
+                                <rect key="frame" x="16" y="160" width="343" height="151"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sat Scores" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-Qd-2Q4">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Sat Scores" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Tap-Qd-2Q4">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="24"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -298,8 +298,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ACT Scores" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zP0-nN-jGG">
-                                        <rect key="frame" x="0.0" y="36" width="343" height="24"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ACT Scores" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zP0-nN-jGG">
+                                        <rect key="frame" x="0.0" y="40" width="343" height="24"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -311,8 +311,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number of Recs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nb-QR-NKs">
-                                        <rect key="frame" x="0.0" y="72" width="343" height="24"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Number of Recs" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6nb-QR-NKs">
+                                        <rect key="frame" x="0.0" y="80" width="343" height="24"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -324,43 +324,38 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-pA-p5u">
-                                        <rect key="frame" x="0.0" y="108" width="343" height="31"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kgz-pA-p5u">
+                                        <rect key="frame" x="0.0" y="120" width="343" height="31"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="CommonApp essay written" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-kg-2Wz">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CommonApp essay written" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mvj-kg-2Wz">
                                                 <rect key="frame" x="0.0" y="0.0" width="294" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SzU-JE-kqV">
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="SzU-JE-kqV">
                                                 <rect key="frame" x="294" y="0.0" width="51" height="31"/>
                                             </switch>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CJs-cF-iNz" customClass="RoundedWhiteButton" customModule="FirebaseApp" customModuleProvider="target">
-                                <rect key="frame" x="42" y="550" width="290" height="64"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="64" id="0Ac-1U-uNp"/>
-                                    <constraint firstAttribute="width" constant="290" id="iyY-du-hvX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Continue">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.44705882349999998" green="0.72156862749999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="sg7-y7-m10" firstAttribute="trailing" secondItem="ooP-re-eSS" secondAttribute="trailing" constant="16" id="H2h-dQ-9MO"/>
                             <constraint firstItem="ooP-re-eSS" firstAttribute="leading" secondItem="sg7-y7-m10" secondAttribute="leading" constant="16" id="Q1G-OE-Zsq"/>
+                            <constraint firstItem="ooP-re-eSS" firstAttribute="top" secondItem="sg7-y7-m10" secondAttribute="top" constant="140" id="TzX-oB-YC3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sg7-y7-m10"/>
                     </view>
+                    <connections>
+                        <outlet property="actField" destination="zP0-nN-jGG" id="Mrz-jS-fPn"/>
+                        <outlet property="essayField" destination="SzU-JE-kqV" id="sEa-Hk-Znp"/>
+                        <outlet property="recField" destination="6nb-QR-NKs" id="eOK-zt-HRq"/>
+                        <outlet property="satField" destination="Tap-Qd-2Q4" id="epz-0e-uhy"/>
+                        <segue destination="cfs-ul-RDs" kind="show" identifier="toHome" id="cnf-pa-h2I"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9W-gr-FiF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -719,7 +714,6 @@
                         <segue destination="UVs-l4-ovH" kind="relationship" relationship="viewControllers" id="zR0-eg-ZWz"/>
                         <segue destination="hj6-fV-Po7" kind="relationship" relationship="viewControllers" id="uFg-NJ-wqE"/>
                         <segue destination="6WW-5R-euW" kind="relationship" relationship="viewControllers" id="mBD-ci-Tez"/>
-                        <segue destination="5HU-yl-1JL" kind="show" id="QrD-mv-0F8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebZ-lg-TEi" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -814,6 +808,6 @@
         <image name="firebaselogo" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZED-UK-Fyi"/>
+        <segue reference="cnf-pa-h2I"/>
     </inferredMetricsTieBreakers>
 </document>

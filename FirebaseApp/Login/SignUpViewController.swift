@@ -57,7 +57,6 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
         super.viewWillAppear(animated)
         emailField.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillAppear), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -151,7 +150,8 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
         Auth.auth().createUser(withEmail: email, password: pass) { user, error in
             if error == nil && user != nil {
                 print("User created!")
-                self.dismiss(animated: false, completion: nil)
+                
+                self.performSegue(withIdentifier: "toInfoScreen", sender: self)
               //  let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                                 
             } else {
