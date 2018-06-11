@@ -45,5 +45,8 @@ class DetailViewController: UIViewController{
         //collImg.frame.height = 150
     }
     
+    @IBAction func backButton(_ sender: Any) {
+        self.performSegue(withIdentifier: "toTable", sender: self)
+    }
     
 }

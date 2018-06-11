@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class InitialViewController: UIViewController {
     
@@ -21,7 +22,9 @@ class InitialViewController: UIViewController {
         super.viewDidAppear(animated)
         
         //- Todo: Check if user is authenticated. If so, segue to the HomeViewController, otherwise, segue to the MenuViewController
-     
+        if let user = Auth.auth().currentUser {
+            self.performSegue(withIdentifier: "initialHome", sender: self)
+        }
         self.performSegue(withIdentifier: "toMenuScreen", sender: self)
     }
     
@@ -31,3 +34,4 @@ class InitialViewController: UIViewController {
         }
     }
 }
+

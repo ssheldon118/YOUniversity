@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     
     var dataArray = Array(collegeDatabase().allColleges.values)
     var currentDataArray = Array(collegeDatabase().allColleges.values)
+   // print(currentDataArray)
     //var resultArray = data
     
     //Table
@@ -31,11 +32,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") as? SearchCell else{
             return UITableViewCell()
         }
+        
+        cell.cellView.layer.cornerRadius = cell.cellView.frame.height / 6
+        
+        
         cell.nameLbl.text = currentDataArray[indexPath.row].name
         cell.acptLbl.text = String(currentDataArray[indexPath.row].accept)
-        cell.actLbl.text = "\(String(currentDataArray[indexPath.row].actLow))-\(String(currentDataArray[indexPath.row].actHigh))"
+        cell.actLbl.text = "\(String(currentDataArray[indexPath.row].actLow))-\(String(currentDataArray[indexPath.row].actHigh))%"
         cell.satLbl.text = "\(String(currentDataArray[indexPath.row].satLow))-\(String(currentDataArray[indexPath.row].satHigh))"
         cell.imgView.image = UIImage(named: currentDataArray[indexPath.row].name)
+        cell.imgView.layer.cornerRadius = cell.imgView.frame.height / 2
+
         cell.delegate = self
         return cell
     }
@@ -123,6 +130,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         let Storyboard = UIStoryboard(name: "Main", bundle: nil)
         let DVC = Storyboard.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         //let DVC = Storyboard.instantiateInitialViewController()! as! DetailViewController
+        
         DVC.getName = currentDataArray[indexPath.row].name
         DVC.getAcptLbl = String(currentDataArray[indexPath.row].accept)
         DVC.getActLbl = "\(String(currentDataArray[indexPath.row].actLow))-\(String(currentDataArray[indexPath.row].actHigh))"
@@ -133,8 +141,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         DVC.getStateLbl = currentDataArray[indexPath.row].state
         DVC.getTuitionLbl = "$ \(String(currentDataArray[indexPath.row].tuition))"
         DVC.getPopulationLbl = String(currentDataArray[indexPath.row].studentPop)
+        self.present(DVC, animated: true, completion: nil)
         
-        self.navigationController?.pushViewController(DVC, animated: true)
+        //aself.performSegue(withIdentifier: "toDetail", sender: self)
+       // self.navigationController?.pushViewController(DVC, animated: true)
         
     }
     

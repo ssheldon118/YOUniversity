@@ -30,6 +30,16 @@ extension UIButton{
 
 class SearchCell: UITableViewCell {
 
+    
+   
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        if (highlighted) {
+            self.cellView.alpha = 0.5
+        } else {
+            self.cellView.alpha = 1
+        }
+    }
+    @IBOutlet var cellView: UIView!
     @IBOutlet var nameLbl: UILabel!
     @IBOutlet var imgView: UIImageView!
     @IBOutlet var favoriteButton: UIButton!

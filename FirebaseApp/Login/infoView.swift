@@ -1,5 +1,5 @@
 //
-//  SignUpViewController.swift
+//  LoginViewController.swift
 //  CloudFunctions
 //
 //  Created by Robert Canton on 2017-09-13.
@@ -10,11 +10,15 @@ import Foundation
 import UIKit
 import Firebase
 
-class SignUpViewController:UIViewController, UITextFieldDelegate {
+
+class InfoViewController:UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var dismissButton: UIButton!
+    @IBOutlet weak var satField: UITextField!
+    @IBOutlet weak var nameField: UITextField!
+    @IBOutlet weak var actField: UITextField!
+    @IBOutlet weak var recField: UITextField!
+    @IBOutlet weak var essayField: UISwitch!
+
     
     var continueButton:RoundedWhiteButton!
     var activityView:UIActivityIndicatorView!
@@ -22,20 +26,18 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //     view.addVerticalGradientLayer(topColor: primaryColor, bottomColor: secondaryColor)
-        
         continueButton = RoundedWhiteButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
-        continueButton.setTitleColor(UIColor.white, for: .normal)
-        continueButton.setTitle("Sign Up", for: .normal)
+        continueButton.setTitleColor(UIColor(hex: "FFFFFF"), for: .normal)
+        // continueButton.setTitleF
+        continueButton.setTitle("Continue", for: .normal)
         continueButton.titleLabel?.font = UIFont(name: "AvenirNext-Medium", size: 22)
         continueButton.center = CGPoint(x: view.center.x, y: view.frame.height - continueButton.frame.height - 24)
-        //  continueButton.highlightedColor = UIColor(white: 1.0, alpha: 1.0)
-        //   continueButton.defaultColor = UIColor.white
-        continueButton.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
-        //continueButton.alpha = 1
-        
+        // continueButton.highlightedColor = UIColor(white: 1.0, alpha: 1.0)
+        // continueButton.defaultColor = UIColor.white
+        continueButton.addTarget(self, action: #selector(handleSignIn), for: .touchUpInside)
+        continueButton.alpha = 0.5
         view.addSubview(continueButton)
-        setContinueButton(enabled: false)
+        setContinueButton(enabled: true)
         
         activityView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
         activityView.color = secondaryColor
@@ -44,26 +46,26 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
         
         view.addSubview(activityView)
         
-        emailField.delegate = self
-        passwordField.delegate = self
+        satField.delegate = self
+        actField.delegate = self
+        recField.delegate = self
         
-        emailField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
-        passwordField.addTarget(self, action: #selector(textFieldChanged), for: .editingChanged)
     }
-    
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        emailField.becomeFirstResponder()
+        nameField.becomeFirstResponder()
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillAppear), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        emailField.resignFirstResponder()
-        passwordField.resignFirstResponder()
-        
+        satField.resignFirstResponder()
+        actField.resignFirstResponder()
+        recField.resignFirstResponder()
+        nameField.resignFirstResponder()
         NotificationCenter.default.removeObserver(self)
     }
     
@@ -98,26 +100,25 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
      - Parameter target: The targeted **UITextField**.
      */
     
-    @objc func textFieldChanged(_ target:UITextField) {
-        let email = emailField.text
-        let password = passwordField.text
-        let formFilled = email != nil && email != "" && password != nil && password != ""
-        setContinueButton(enabled: formFilled)
-    }
-    
-    
-    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         // Resigns the target textField and assigns the next textField in the form.
         
         switch textField {
-        case emailField:
-            emailField.resignFirstResponder()
-            passwordField.becomeFirstResponder()
+        case nameField:
+            nameField.resignFirstResponder()
+            satField.becomeFirstResponder()
             break
-        case passwordField:
-            handleSignUp()
+        case satField:
+            satField.resignFirstResponder()
+            actField.becomeFirstResponder()
+            break
+        case actField:
+            actField.resignFirstResponder()
+            recField.becomeFirstResponder()
+            break
+        case recField:
+            recField.resignFirstResponder()
             break
         default:
             break
@@ -139,38 +140,28 @@ class SignUpViewController:UIViewController, UITextFieldDelegate {
         }
     }
     
-    @objc func handleSignUp() {
-        guard let email = emailField.text else { return }
-        guard let pass = passwordField.text else { return }
+    @objc func handleSignIn() {
+        guard let name = nameField.text else { return }
+        guard let satScore = satField.text else { return }
+        guard let actScore = actField.text else { return }
+        guard let recNumber = recField.text else { return }
+        guard let essayCompleted = Optional(essayField.isOn) else {return}
         
         setContinueButton(enabled: false)
-        continueButton.setTitle("", for: .normal)
-        activityView.startAnimating()
+        //continueButton.setTitle("", for: .normal)
+        //ctivityView.startAnimating()
+        //let defaults = UserDefaults.standard
         
-        Auth.auth().createUser(withEmail: email, password: pass) { user, error in
-            if error == nil && user != nil {
-                print("User created!")
-                
-                self.performSegue(withIdentifier: "toInfoScreen", sender: self)
-                //  let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-                
-            } else {
-                let alert = UIAlertController(title: "Error", message: error!.localizedDescription, preferredStyle: UIAlertControllerStyle.alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
-                
-                print("Error Signing Up: \(error!.localizedDescription)")
-                
-                self.setContinueButton(enabled: true)
-                self.continueButton.setTitle("Sign Up", for: .normal)
-                self.activityView.stopAnimating()
-            }
-        }
+        UserDefaults.standard.set(name, forKey: "name")
+        UserDefaults.standard.set(satScore, forKey: "satScore")
+        UserDefaults.standard.set(actScore, forKey: "actScore")
+        UserDefaults.standard.set(recNumber, forKey: "recNumber")
+        UserDefaults.standard.set(essayCompleted, forKey: "essayCompleted")
         
-        
+        self.performSegue(withIdentifier: "toHome", sender: self)
+        //self.dismiss(animated: false, completion: nil)
+        //SignUpViewController.dismiss(animated: true, completion: nil)
     }
-    
-    
-    
 }
+
 

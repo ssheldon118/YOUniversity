@@ -40,8 +40,18 @@ PODS:
 DEPENDENCIES:
   - Firebase/Auth
   - Firebase/Core
-  - JTAppleCalendar
+  - JTAppleCalendar (from `https://github.com/patchthecode/JTAppleCalendar.git`, branch `master`)
   - paper-onboarding
+
+EXTERNAL SOURCES:
+  JTAppleCalendar:
+    :branch: master
+    :git: https://github.com/patchthecode/JTAppleCalendar.git
+
+CHECKOUT OPTIONS:
+  JTAppleCalendar:
+    :commit: b6f4518302ae48dd6160b7b366cbd86e9b769b22
+    :git: https://github.com/patchthecode/JTAppleCalendar.git
 
 SPEC CHECKSUMS:
   Firebase: cc13dfab1038c8b45d7903e01fc690451d6d0b24
@@ -51,10 +61,10 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: 8d20d890d65c917f9f7d9950b6e10a760ad34321
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   GTMSessionFetcher: 390ea358e5a0d0133153806f744662dad933d06b
-  JTAppleCalendar: 2d4f974f9f3c8b4964d51ca1f6e004883c031fbe
+  JTAppleCalendar: df0df2b055ba4c6d5940ef4f40a0f4270ea021ac
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   paper-onboarding: e6e2778c4e8de8db1d798bb7e3b4922e91fb7f99
 
-PODFILE CHECKSUM: 650f09d6ba249f1b725983fc130a4ac05aaeb85f
+PODFILE CHECKSUM: 58b85ca869f3cc07cce58404138471d853b40bd4
 
 COCOAPODS: 1.4.0

@@ -9,5 +9,5 @@ target 'FirebaseApp' do
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'paper-onboarding'
-  pod 'JTAppleCalendar'
+  pod 'JTAppleCalendar', :git => 'https://github.com/patchthecode/JTAppleCalendar.git', :branch => 'master'
 end
